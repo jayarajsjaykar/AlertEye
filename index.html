@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberSoul — AlertEye | Intelligence That Protects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><span class="logo-mark"></span> CyberSoul</div>
+    <div class="nav-links">
+      <a href="#product">Product</a>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#industries">Industries</a>
+      <a href="#ecosystem">Ecosystem</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost btn-sm">Talk to sales</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Request a demo</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="product">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><span class="eyebrow-dot"></span> AI-Powered Smart Surveillance</span>
+          <h1>Turn every camera into a threat <span class="hl">detector</span>, not just a recorder.</h1>
+          <p class="lead">AlertEye layers computer vision and deep learning onto the CCTV infrastructure you already own — watching every feed at once, flagging real threats in real time, and putting the right alert in front of the right person before an incident escalates.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request a demo</a>
+            <a href="#features" class="btn btn-ghost">Explore capabilities</a>
+          </div>
+          <div class="tagline-strip mono">INTELLIGENCE THAT PROTECTS</div>
+        </div>
+
+        <div class="dashboard">
+          <div class="monitor">
+            <div class="monitor-bar">
+              <span class="rec mono"><span class="rec-dot"></span> LIVE</span>
+              <span class="cam-id mono">CAM_04 · LOBBY-EAST</span>
+            </div>
+            <div class="feed" id="mainFeed">
+              <div class="ceiling-light cl1"></div>
+              <div class="ceiling-light cl2"></div>
+              <div class="ceiling-light cl3"></div>
+              <div class="door door-l"></div>
+              <div class="door door-r"></div>
+
+              <div class="hud-corner hud-tl"></div>
+              <div class="hud-corner hud-tr"></div>
+              <div class="hud-corner hud-bl"></div>
+              <div class="hud-corner hud-br"></div>
+              <div class="scanline"></div>
+
+              <!-- walker 1 + tracking box -->
+              <div class="walker w1">
+                <div class="body">
+                  <div class="head"></div>
+                  <div class="torso"></div>
+                  <div class="leg l"></div>
+                  <div class="leg r"></div>
+                  <div class="bbox ok tracked">
+                    <span class="tag">PERSON · 97%</span>
+                    <span class="corner c-tl"></span><span class="corner c-tr"></span>
+                    <span class="corner c-bl"></span><span class="corner c-br"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- walker 2 + tracking box -->
+              <div class="walker w2">
+                <div class="body">
+                  <div class="head"></div>
+                  <div class="torso"></div>
+                  <div class="leg l"></div>
+                  <div class="leg r"></div>
+                  <div class="bbox ok tracked">
+                    <span class="tag">PERSON · 93%</span>
+                    <span class="corner c-tl"></span><span class="corner c-tr"></span>
+                    <span class="corner c-bl"></span><span class="corner c-br"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- vehicle + tracking box -->
+              <div class="vehicle-track">
+                <div class="vehicle">
+                  <div class="cab"></div>
+                  <div class="base"></div>
+                  <div class="wheel l"></div>
+                  <div class="wheel r"></div>
+                  <div class="light"></div>
+                  <div class="bbox ok tracked">
+                    <span class="tag">VEHICLE · 99%</span>
+                    <span class="corner c-tl"></span><span class="corner c-tr"></span>
+                    <span class="corner c-bl"></span><span class="corner c-br"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- periodic unauthorized-access alert on the door -->
+              <div class="door-alert door-l pulse" style="animation-delay:.2s;">
+                <div class="bbox warn tracked" style="animation-delay:0s;">
+                  <span class="tag">UNAUTHORIZED ACCESS</span>
+                  <span class="corner c-tl"></span><span class="corner c-tr"></span>
+                  <span class="corner c-bl"></span><span class="corner c-br"></span>
+                </div>
+              </div>
+
+              <div class="vignette"></div>
+              <span class="feed-time mono" id="feedTime">02/07/2026 · 00:00:00</span>
+              <span class="feed-count mono" id="feedCount">● Analyzing 3 objects</span>
+            </div>
+            <div class="monitor-footer">
+              <span>AlertEye Engine v2 · Edge + Cloud</span>
+              <span class="status">4 cameras online</span>
+            </div>
+          </div>
+
+          <div class="cam-strip">
+            <div class="cam-thumb active">
+              <div class="mini-shape" style="left:30%;"></div>
+              <div class="mini-shape" style="left:55%; height:34%;"></div>
+              <span class="tdot"></span>
+              <span class="tlabel mono">CAM_04</span>
+            </div>
+            <div class="cam-thumb busy">
+              <div class="mini-shape" style="left:45%;"></div>
+              <span class="tdot"></span>
+              <span class="tlabel mono">CAM_01</span>
+            </div>
+            <div class="cam-thumb">
+              <div class="mini-shape" style="left:20%; height:30%;"></div>
+              <span class="tdot"></span>
+              <span class="tlabel mono">CAM_02</span>
+            </div>
+            <div class="cam-thumb">
+              <span class="tdot"></span>
+              <span class="tlabel mono">CAM_03</span>
+            </div>
+          </div>
+
+          <div class="log-panel">
+            <div class="log-head">
+              <span>Detection Log</span>
+              <span class="live-clock mono" id="liveClock">00:00:00</span>
+            </div>
+            <ul class="log-list" id="logList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- PROBLEM / SOLUTION -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow mono">The Problem</span>
+        <h2>Cameras that only record can't stop what they see.</h2>
+        <p>Conventional CCTV relies on human operators watching dozens of screens at once. That means delayed responses, missed incidents, higher staffing costs, and risks that were preventable — if anyone had been looking at the right screen at the right second.</p>
+      </div>
+
+      <div class="compare">
+        <div class="compare-card old">
+          <h3>Traditional CCTV</h3>
+          <ul>
+            <li>Footage is reviewed after an incident, not during it</li>
+            <li>One operator can realistically watch a handful of feeds</li>
+            <li>Threats are caught by chance, not by design</li>
+            <li>Evidence exists, but the response was already too late</li>
+          </ul>
+        </div>
+        <div class="compare-card new">
+          <h3>AlertEye</h3>
+          <ul>
+            <li>Every feed is analyzed continuously, by AI, in real time</li>
+            <li>Suspicious activity triggers an instant alert to the right team</li>
+            <li>Incidents are flagged as they begin, not after they end</li>
+            <li>Security teams act on intelligence, not just footage</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- FEATURES -->
+  <section class="section-pad" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow mono">Core Capabilities</span>
+        <h2>One platform, watching for everything that matters.</h2>
+        <p>AlertEye ships with a full library of detection models — tuned for security, safety, and compliance — running on the cameras you already have.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h4>Real-time AI monitoring</h4>
+          <p>Every camera stream analyzed continuously, not sampled or reviewed after the fact.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20H5a2 2 0 0 1-2-2v-2M15 4h4a2 2 0 0 1 2 2v2M15 20h4a2 2 0 0 0 2-2v-2M9 4H5a2 2 0 0 0-2 2v2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+          </div>
+          <h4>Intrusion detection</h4>
+          <p>Flags entry into restricted zones and perimeters the moment it happens.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 11-14h-8l1-6Z"/></svg>
+          </div>
+          <h4>Violence &amp; fight detection</h4>
+          <p>Recognizes physical altercations in progress and escalates instantly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1 3-2 4-2 7a4 4 0 1 0 8 0c0-1-1-2-1-2 1 4-1 5-1 5 1-3-2-4-2-6 0 2-2 3-2 5s2 4 2 4"/></svg>
+          </div>
+          <h4>Fire &amp; smoke detection</h4>
+          <p>Catches early visual signs of fire before smoke alarms would ever trigger.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m14 10 6-6M8 6l2 2-4 4-2-2a4 4 0 0 1 4-4Zm2 6 4 4-4 4-4-4Z"/></svg>
+          </div>
+          <h4>Weapon detection</h4>
+          <p>Identifies visible firearms and edged weapons in the frame in real time.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/><path d="M2 12a10 10 0 0 1 20 0" stroke-dasharray="2 3"/></svg>
+          </div>
+          <h4>Suspicious behavior</h4>
+          <p>Learns typical patterns of movement and flags what breaks from them.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="9" width="16" height="10" rx="1"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+          </div>
+          <h4>Abandoned object</h4>
+          <p>Notices bags or packages left unattended in monitored areas.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          </div>
+          <h4>Unauthorized access</h4>
+          <p>Alerts when someone enters a secured door, gate, or zone without clearance.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h4>Face recognition</h4>
+          <p>Identity matching for access and watchlists, deployed where legally permitted.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="10" width="18" height="7" rx="2"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/><path d="M5 10l2-4h10l2 4"/></svg>
+          </div>
+          <h4>Vehicle detection &amp; ANPR</h4>
+          <p>Tracks vehicles and reads plates automatically at gates and lots.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 4 8 8 9 4-1 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h4>PPE compliance</h4>
+          <p>Confirms helmets, vests, and safety gear are worn on site.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 7.4 11 16M16 7.4 13 16"/></svg>
+          </div>
+          <h4>Cross-camera tracking</h4>
+          <p>Follows a person or vehicle's path across every connected camera.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section-pad" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow mono">How It Works</span>
+        <h2>Live in weeks, not a rip-and-replace project.</h2>
+        <p>AlertEye is built to sit on top of the cameras and network you already run.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="step-num mono">01 — CONNECT</span>
+          <h4>Plug into your existing cameras</h4>
+          <p>AlertEye connects to your current CCTV infrastructure — no forklift upgrade, no new hardware required to get started.</p>
+        </div>
+        <div class="step">
+          <span class="step-num mono">02 — ANALYZE</span>
+          <h4>AI watches every stream, continuously</h4>
+          <p>Computer vision models run on the edge and in the cloud, scanning for intrusions, weapons, fire, PPE gaps, and more — all at once.</p>
+        </div>
+        <div class="step">
+          <span class="step-num mono">03 — RESPOND</span>
+          <h4>The right alert reaches the right person</h4>
+          <p>Security teams get instant notifications with context, so incidents are managed as they unfold, and reviewed afterward with a full timeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- TECH STACK -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow mono">Built On</span>
+        <h2>An AI and cybersecurity stack built for scale.</h2>
+        <p>Modular architecture across edge and cloud, so deployments scale from a single site to a national network.</p>
+      </div>
+      <div class="tech-cloud">
+        <span class="tech-pill">Computer Vision</span>
+        <span class="tech-pill">Deep Learning</span>
+        <span class="tech-pill">Edge AI</span>
+        <span class="tech-pill">OpenCV</span>
+        <span class="tech-pill">YOLO</span>
+        <span class="tech-pill">TensorFlow</span>
+        <span class="tech-pill">PyTorch</span>
+        <span class="tech-pill">FastAPI</span>
+        <span class="tech-pill">Node.js</span>
+        <span class="tech-pill">React</span>
+        <span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">Docker</span>
+        <span class="tech-pill">Kubernetes</span>
+        <span class="tech-pill">Microsoft Azure</span>
+        <span class="tech-pill">AWS</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- INDUSTRIES -->
+  <section class="section-pad" id="industries">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow mono">Who It's For</span>
+        <h2>Deployed wherever people, assets, and infrastructure need watching.</h2>
+      </div>
+      <div class="industry-grid">
+        <div class="industry-card"><span class="dot"></span>Government agencies</div>
+        <div class="industry-card"><span class="dot"></span>Smart City projects</div>
+        <div class="industry-card"><span class="dot"></span>Police departments</div>
+        <div class="industry-card"><span class="dot"></span>Educational institutions</div>
+        <div class="industry-card"><span class="dot"></span>Hospitals</div>
+        <div class="industry-card"><span class="dot"></span>Airports</div>
+        <div class="industry-card"><span class="dot"></span>Railway stations</div>
+        <div class="industry-card"><span class="dot"></span>Banks</div>
+        <div class="industry-card"><span class="dot"></span>Manufacturing</div>
+        <div class="industry-card"><span class="dot"></span>Corporate offices</div>
+        <div class="industry-card"><span class="dot"></span>Warehouses</div>
+        <div class="industry-card"><span class="dot"></span>Shopping malls</div>
+        <div class="industry-card"><span class="dot"></span>Hotels</div>
+        <div class="industry-card"><span class="dot"></span>Residential communities</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- BUSINESS MODEL -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow mono">How We Work With You</span>
+        <h2>Flexible commercial models for enterprise and government.</h2>
+      </div>
+      <div class="model-grid">
+        <div class="model-item">
+          <span class="idx mono">B2B</span>
+          <div><h4>Enterprise licensing</h4><p>Direct deployment and licensing for corporate and commercial sites.</p></div>
+        </div>
+        <div class="model-item">
+          <span class="idx mono">B2G</span>
+          <div><h4>Government contracts</h4><p>Built to meet the procurement and compliance needs of public agencies.</p></div>
+        </div>
+        <div class="model-item">
+          <span class="idx mono">SaaS</span>
+          <div><h4>Subscription plans</h4><p>Predictable, scalable pricing as your camera network grows.</p></div>
+        </div>
+        <div class="model-item">
+          <span class="idx mono">AMC</span>
+          <div><h4>Installation &amp; maintenance</h4><p>Full install, integration, and Annual Maintenance Contracts.</p></div>
+        </div>
+        <div class="model-item">
+          <span class="idx mono">API</span>
+          <div><h4>API licensing</h4><p>Embed AlertEye's detection models into your own platforms.</p></div>
+        </div>
+        <div class="model-item">
+          <span class="idx mono">CUSTOM</span>
+          <div><h4>Custom AI solutions</h4><p>Purpose-built models for use cases specific to your site or industry.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ECOSYSTEM -->
+  <section class="section-pad" id="ecosystem">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow mono">The Roadmap</span>
+        <h2>AlertEye is the first product in the CyberSoul platform.</h2>
+        <p>As CyberSoul grows, AlertEye becomes the foundation for a full suite of AI-driven safety and security products.</p>
+      </div>
+      <div class="eco-grid">
+        <div class="eco-card live">
+          <span class="badge mono">LIVE</span>
+          <h4>AlertEye</h4>
+          <p>AI smart surveillance — real-time detection on existing CCTV infrastructure.</p>
+        </div>
+        <div class="eco-card next">
+          <span class="badge mono">NEXT</span>
+          <h4>CyberShield</h4>
+          <p>Cybersecurity monitoring for the networks behind physical security systems.</p>
+        </div>
+        <div class="eco-card next">
+          <span class="badge mono">NEXT</span>
+          <h4>ThreatSense</h4>
+          <p>Threat intelligence that connects patterns across sites and incidents.</p>
+        </div>
+        <div class="eco-card next">
+          <span class="badge mono">NEXT</span>
+          <h4>SafeCity AI</h4>
+          <p>A smart city safety platform for municipal and public infrastructure.</p>
+        </div>
+        <div class="eco-card next">
+          <span class="badge mono">NEXT</span>
+          <h4>VisionGuard</h4>
+          <p>Industrial safety monitoring for plants, warehouses, and job sites.</p>
+        </div>
+        <div class="eco-card next">
+          <span class="badge mono">NEXT</span>
+          <h4>IdentityX</h4>
+          <p>AI-driven identity and access security across facilities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-pad" id="contact">
+    <div class="wrap">
+      <div class="cta-section">
+        <span class="eyebrow mono">Get Started</span>
+        <h2>See AlertEye watching your own cameras.</h2>
+        <p>Tell us where to reach you and we'll set up a walkthrough with your feeds, your site, and your team.</p>
+        <form class="cta-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Request sent ✓'; this.querySelector('button').disabled=true;">
+          <input type="email" placeholder="Work email address" required aria-label="Work email address">
+          <button type="submit" class="btn btn-primary">Request a demo</button>
+        </form>
+        <p class="cta-note mono">NO CREDIT CARD REQUIRED · RESPONSE WITHIN 1 BUSINESS DAY</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span> CyberSoul</div>
+        <p>AI and cybersecurity technology company building intelligent security solutions for organizations and public infrastructure worldwide.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Product</h5>
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#industries">Industries</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#ecosystem">Ecosystem</a>
+          <a href="#contact">Contact sales</a>
+        </div>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <li>AlertEye — Live</li>
+          <li>CyberShield</li>
+          <li>ThreatSense</li>
+        </div>
+      </div>
+    </div>
+    <div class="divider" style="margin-bottom:22px;"></div>
+    <div class="footer-bottom">
+      <span>© 2026 CyberSoul. All rights reserved.</span>
+      <span>Intelligence That Protects.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function stamp(d){
+    return pad(d.getDate())+'/'+pad(d.getMonth()+1)+'/'+d.getFullYear()+' · '+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  }
+  function clockStamp(d){
+    return pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds());
+  }
+
+  var feedTime = document.getElementById('feedTime');
+  var liveClock = document.getElementById('liveClock');
+
+  function tick(){
+    var now = new Date();
+    if(feedTime) feedTime.textContent = stamp(now);
+    if(liveClock) liveClock.textContent = clockStamp(now);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  var counts = [3,4,3,5,4];
+  var ci = 0;
+  var feedCount = document.getElementById('feedCount');
+  setInterval(function(){
+    if(!feedCount) return;
+    ci = (ci+1) % counts.length;
+    feedCount.textContent = '● Analyzing ' + counts[ci] + ' objects';
+  }, 2600);
+
+  var events = [
+    { m:'Person tracked — Lobby East, 97% confidence', type:'info' },
+    { m:'Vehicle logged — plate read complete', type:'info' },
+    { m:'Person entered frame — CAM_01', type:'info' },
+    { m:'Unauthorized access — Door L, CAM_04', type:'alert' },
+    { m:'PPE check passed — CAM_02', type:'info' },
+    { m:'Loitering pattern flagged — reviewing', type:'warn' },
+    { m:'Object left unattended — 40s and counting', type:'warn' },
+    { m:'Face match cleared — authorized staff', type:'info' },
+    { m:'Motion spike — CAM_03 perimeter', type:'warn' }
+  ];
+
+  var logList = document.getElementById('logList');
+  var MAX_ITEMS = 6;
+
+  function addLog(){
+    if(!logList) return;
+    var e = events[Math.floor(Math.random()*events.length)];
+    var now = new Date();
+    var li = document.createElement('li');
+    li.className = 'log-item ' + e.type;
+    li.innerHTML = '<span class="dot"></span><span class="t">'+clockStamp(now)+'</span><span class="m">'+e.m+'</span>';
+    logList.prepend(li);
+    while(logList.children.length > MAX_ITEMS){
+      logList.removeChild(logList.lastChild);
+    }
+  }
+
+  addLog();
+  setTimeout(addLog, 900);
+  if(!reduceMotion){
+    setInterval(addLog, 3200);
+  }
+})();
+</script>
+</body>
+</html>
