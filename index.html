@@ -24,8 +24,21 @@
     </div>
     <div class="nav-cta">
       <a href="#contact" class="btn btn-ghost btn-sm">Talk to sales</a>
-      <a href="#contact" class="btn btn-primary btn-sm">Request a demo</a>
-    </div>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <input type="text" name="name" placeholder="Full name" required>
+  <input type="email" name="email" placeholder="Work email" required>
+  <input type="text" name="company" placeholder="Company" required>
+  <input type="tel" name="phone" placeholder="Phone (optional)">
+  <select name="camera_count">
+    <option value="">Approx. number of cameras</option>
+    <option>1–10</option>
+    <option>11–50</option>
+    <option>51–200</option>
+    <option>200+</option>
+  </select>
+  <textarea name="message" placeholder="Tell us about your site"></textarea>
+  <button type="submit">Request a demo</button>
+</form>    </div>
   </nav>
 </header>
 
